@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #pies, #lew {
+        display: none;
+    }
+</style>
+<body>
+    <section id="zad1">
+        <h1>ZAD 1</h1>
+        <img src="img/ronaldo.jpeg" id="img" alt="" srcset="">
+
+        <button id="ukryj">Ukryj</button> <button id="pokaz">Pokaz</button>
+    </section>
+
+    <section id="zad2">
+        <h1>ZAD 2</h1>
+        <img src="img/pies.jpeg" alt="pies" id="pies" class="zwierzeta">
+        <img src="img/kot.jpeg" alt="kot" id="kot" class="zwierzeta">
+        <img src="img/lew.jpeg" alt="lew" id="lew" class="zwierzeta">
+
+        <button id="ppies">pies</button>
+        <button id="pkot">kot</button>
+        <button id="plew">lew</button>
+    </section>
+    
+    <script>
+        let ukryj = document.querySelector("#ukryj").addEventListener("click", function () {
+         document.querySelector('#img').style.display = "none";
+        })
+        let pokaz = document.querySelector("#pokaz").addEventListener("click", function () {
+             document.querySelector('#img').style.display = "block";
+        })
+
+
+       document.querySelectorAll("#zad2 > button").forEach(b => {
+        b.addEventListener('click', (e) => {
+            console.log("klyk");
+            document.querySelectorAll('img').forEach(img => {
+                img.style.display='none'
+
+            });
+            document.querySelector("#"+e.target.innerHTML).style.display = "block"
+        })
+        
+       });
+
+       function kolor(colorek) {
+        document.querySelector("textarea").style.color = colorek;
+       }
+
+       let k
+    </script>
+</body>
+</html>
